@@ -1,12 +1,26 @@
 package com.letscode.SoccerChampionship;
 
+import com.letscode.SoccerChampionship.entities.SoccerTeam;
+import com.letscode.SoccerChampionship.service.FileHandler;
+
+import java.util.*;
+
 import static com.letscode.SoccerChampionship.service.FileHandler.*;
 
 public class Main {
   public static void main(String[] args) {
-    readFile("brasileirao2020.csv");
+// ******* TESTE DE ARQUIVO *******
+    String file = "matchesResult.csv";
+    getStatistcsFromFile(file);
+//    readFile(file);
+//    System.out.println("*".repeat(50));
+//    writeTeamFiles();
+    deleteAllTextFile();
 
-    createTeamFile("times.txt");
-    readFile("times.txt");
+//   System.out.println("*".repeat(50));
+//    writeTeamResultsRaking();
+
+//  TODO: Menu
+
   }
 }
