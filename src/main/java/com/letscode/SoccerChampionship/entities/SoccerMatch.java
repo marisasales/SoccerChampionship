@@ -1,8 +1,12 @@
 package com.letscode.SoccerChampionship.entities;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
 
 import java.time.LocalDate;
+
+import static java.util.Comparator.comparing;
 
 @AllArgsConstructor
 @Getter
@@ -16,15 +20,9 @@ public class SoccerMatch implements Comparable<SoccerMatch> {
 
   @Override
   public int compareTo(SoccerMatch o) {
-//    return date.compareTo(o.getDate()) == 0
-//      ? homeTeam.compareTo(o.getHomeTeam())
-//      : date.compareTo(o.getDate());
-
-//  Comparar também por awayTeam
-    return date.compareTo(o.getDate()) == 0
-      ? homeTeam.compareTo(o.getHomeTeam()) == 0
-        ? awayTeam.compareTo(o.getAwayTeam())
-        : homeTeam.compareTo(o.getHomeTeam())
-      : date.compareTo(o.getDate());
+    return comparing(SoccerMatch::getDate)
+      .thenComparing(SoccerMatch::getHomeTeam)
+      .thenComparing(SoccerMatch::getAwayTeam)
+      .compare(this, o);
   }
 }

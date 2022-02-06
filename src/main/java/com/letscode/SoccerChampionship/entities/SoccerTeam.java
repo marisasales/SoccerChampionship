@@ -1,9 +1,11 @@
 package com.letscode.SoccerChampionship.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 
-@Data
+@AllArgsConstructor
+@Getter
 @Builder
 public class SoccerTeam {
   private String teamName;
@@ -16,15 +18,13 @@ public class SoccerTeam {
     this.wins++;
   }
 
-  public void increaseLoses(){
-    this.loses++;
-  }
+  public void increaseLoses(){ this.loses++; }
 
   public void increaseDraws(){
     this.draws++;
   }
 
   public void calculateScore(){
-    this.score = (this.wins*3) + (this.loses * 0) + (this.draws * 1);
+    this.score = (this.wins * 3) + (this.draws);
   }
 }
