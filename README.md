@@ -23,12 +23,11 @@ JAVA is required to run the project.
 ## How to use:
 
 ### Menu Options
-Menu Options
-[1] Read File
-[2] Create team files
-[3] Create final results
-[4] Delete files
-[5] Quit running
+1. Read File
+2. Create team files
+3. Create final results
+4. Delete files
+5. Quit running
 
 ## Developed by:
 @marisasales
