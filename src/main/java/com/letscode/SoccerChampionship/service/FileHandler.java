@@ -18,7 +18,7 @@ public class FileHandler {
   }
 
   public static List<String> getFileLines(String fileName) {
-    List<String> lines = null;
+    List<String> lines = new ArrayList<>();
     try {
       File file = new File(filePath(fileName));
       lines = FileUtils.readLines(file, "UTF-8");

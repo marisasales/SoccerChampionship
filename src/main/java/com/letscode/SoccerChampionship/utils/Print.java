@@ -1,9 +1,9 @@
 package com.letscode.SoccerChampionship.utils;
 
+import java.io.File;
 import java.time.format.DateTimeFormatter;
 
-import static com.letscode.SoccerChampionship.service.CollectionsHandler.getListOfResults;
-import static com.letscode.SoccerChampionship.service.CollectionsHandler.getMatchStatistics;
+import static com.letscode.SoccerChampionship.service.CollectionsHandler.*;
 
 public class Print {
   private static final String SEPARATOR = "-".repeat(44);
@@ -23,6 +23,20 @@ public class Print {
       " ".repeat(10) + "5 - Quit running\n" +
       SEPARATOR + "\n" +
       "Choose an option: ");
+  }
+
+  public static void presentFiles() {
+    File[] files = new File("src/main/resources").listFiles();
+
+    print(SEPARATOR);
+    print("List of files:");
+
+    assert files != null;
+    for (File file : files) {
+      print(file.getName());
+    }
+
+    print(SEPARATOR);
   }
 
   public static void printMatchesResult() {

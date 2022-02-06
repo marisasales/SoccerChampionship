@@ -2,24 +2,11 @@ package com.letscode.SoccerChampionship.service;
 
 import com.letscode.SoccerChampionship.utils.Scan;
 
-import java.io.File;
-
 import static com.letscode.SoccerChampionship.service.CollectionsHandler.*;
 import static com.letscode.SoccerChampionship.service.FileHandler.*;
-import static com.letscode.SoccerChampionship.utils.Print.print;
-import static com.letscode.SoccerChampionship.utils.Print.printMenu;
+import static com.letscode.SoccerChampionship.utils.Print.*;
 
 public class MenuHandler {
-
-  public static void presentFiles() {
-    File[] files = new File("src/main/resources").listFiles();
-
-    assert files != null;
-    for (File file : files) {
-      print(file.getName());
-    }
-  }
-
   public static void chooseMenuOption() {
     int selectedOptionInMenu;
 
@@ -55,7 +42,7 @@ public class MenuHandler {
     } while (selectedOptionInMenu != 5);
   }
 
-  public static void openFile() {
+  private static void openFile() {
     presentFiles();
     print("Please, enter the file name you want to access (e.g. Corinthians.txt): ");
     String fileName = Scan.enterString();
